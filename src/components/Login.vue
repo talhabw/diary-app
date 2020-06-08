@@ -5,11 +5,11 @@
       <span class="warning">{{warning}}</span>
       <div class="input">
         <i class="fas fa-user iconn"></i>
-        <input type="text" v-model="username" placeholder="Username" />
+        <input type="text" v-model="username" placeholder="Username (deneme)" />
       </div>
       <div class="input">
         <i class="fas fa-lock"></i>
-        <input type="password" v-model="password" placeholder="Password" />
+        <input type="password" v-model="password" placeholder="Password (123456)" />
       </div>
       <button class="login-button" @click="loginControl">Login</button>
     </div>

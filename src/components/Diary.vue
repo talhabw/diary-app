@@ -3,7 +3,7 @@
     <div class="searchDiary">
       <button class="logout" @click="logout">Çıkış Yap</button>
       <input type="date" @change="dateToNum" v-model="date" />
-      <input type="text" v-model="search" />
+      <input type="text" v-model="search" placeholder="Write the diary title or text..." />
     </div>
 
     <table>
@@ -27,7 +27,7 @@
           <td>{{diary.id}}</td>
           <td>{{diary.date.split("-").reverse().join(" / ")}}</td>
           <td>{{diary.title}}</td>
-          <td>{{diary.article.substr(0, 8)}}...</td>
+          <td>{{diary.text.substr(0, 8)}}...</td>
         </tr>
       </tbody>
     </table>
@@ -36,23 +36,17 @@
       <h2>{{selectedDiary.id}}</h2>
       <h3>{{selectedDiary.title}}</h3>
       <h5>{{selectedDiary.date}}</h5>
-      <p>{{selectedDiary.article}}</p>
+      <p>{{selectedDiary.text}}</p>
     </div>
 
     <div class="edit">
       <!-- <input type="text" placeholder="Diary ID" value="2" disabled /> -->
       <input type="text" placeholder="Diary Title*" v-model="selectedDiary.title" required />
-      <textarea
-        cols="30"
-        rows="10"
-        placeholder="Diary Article*"
-        v-model="selectedDiary.article"
-        required
-      ></textarea>
+      <textarea cols="30" rows="10" placeholder="Diary text*" v-model="selectedDiary.text" required></textarea>
       <p>*: required</p>
       <div class="buttons">
-        <button @click="clearInputs">Vazgeç</button>
-        <button @click="saveDiary">Kaydet</button>
+        <button class="btn" @click="clearInputs">Vazgeç</button>
+        <button class="btn" @click="saveDiary">Kaydet</button>
       </div>
     </div>
   </div>
@@ -68,25 +62,25 @@ export default {
           id: 0,
           date: "2021-12-11",
           title: "title1",
-          article: "article1"
+          text: "text1"
         },
         {
           id: 1,
           date: "2020-02-03",
           title: "title2",
-          article: "article2"
+          text: "text2"
         },
         {
           id: 2,
           date: "2017-05-08",
           title: "title3",
-          article: "article3"
+          text: "text3"
         },
         {
           id: 3,
           date: "2021-12-12",
           title: "title4",
-          article: "sss"
+          text: "sss"
         }
       ],
       date: new Date().toISOString().slice(0, 10),
@@ -101,7 +95,7 @@ export default {
       return this.diaryDate.filter(function(diary) {
         return (
           diary.title.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 ||
-          diary.article.toLowerCase().indexOf(self.search.toLowerCase()) >= 0
+          diary.text.toLowerCase().indexOf(self.search.toLowerCase()) >= 0
         );
       });
       //return this.customers;
@@ -207,8 +201,12 @@ thead {
 tbody {
   background-color: #ddd;
 }
-.logout {
-  padding: 10px 30px;
+.diary {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+.logout,
+.btn {
   border: none;
   border-radius: 7px;
   background: linear-gradient(
@@ -218,8 +216,13 @@ tbody {
   );
   outline: none;
   cursor: pointer;
-  height: 50px;
+  height: 36px;
+  width: 215px;
+  padding: 5px;
   margin-right: auto;
+}
+.btn {
+  margin: 0;
 }
 .edit {
   display: flex;
@@ -239,8 +242,57 @@ tbody {
   display: flex;
   justify-content: space-between;
 }
-
 .searchDiary > input {
   margin: 0 10px;
+  border: 1px solid gray;
+  height: 30px;
+  width: 215px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 255, 191, 1) 40%,
+    rgba(0, 183, 255, 1) 90%
+  );
+  transition: border 300ms linear;
+  padding: 1px 5px;
+  font-size: 1.1rem;
+}
+/* Removes the clear button from date inputs */
+input[type="date"]::-webkit-clear-button {
+  display: none;
+}
+
+/* Removes the spin button */
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+/* Always display the drop down caret */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: #2c3e50;
+}
+
+/* A few custom styles for date inputs */
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  color: #95a5a6;
+  font-family: "Helvetica", arial, sans-serif;
+  border: 1px solid gray;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 255, 191, 1) 40%,
+    rgba(0, 183, 255, 1) 90%
+  );
+  padding: 1px 5px;
+  display: inline-block !important;
+  visibility: visible !important;
+}
+
+input[type="date"],
+focus {
+  color: #95a5a6;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
 }
 </style>
