@@ -302,22 +302,16 @@ tbody {
   padding: 1px 5px;
   font-size: 1.1rem;
 }
-/* Removes the clear button from date inputs */
 input[type="date"]::-webkit-clear-button {
   display: none;
 }
 
-/* Removes the spin button */
 input[type="date"]::-webkit-inner-spin-button {
   display: none;
 }
-
-/* Always display the drop down caret */
 input[type="date"]::-webkit-calendar-picker-indicator {
   color: #2c3e50;
 }
-
-/* A few custom styles for date inputs */
 input[type="date"] {
   appearance: none;
   -webkit-appearance: none;
@@ -333,7 +327,6 @@ input[type="date"] {
   display: inline-block !important;
   visibility: visible !important;
 }
-
 input[type="date"],
 focus {
   color: #95a5a6;
