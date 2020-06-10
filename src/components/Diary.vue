@@ -12,7 +12,7 @@
           <td></td>
           <td>
             Diary Date
-            <br />(mm/dd/yyyy)
+            <br />(dd/mm/yyyy)
           </td>
           <td>Diary Title</td>
           <td>Diary Text</td>
@@ -21,7 +21,7 @@
       <tbody>
         <tr
           @click="diaryDetails(diary)"
-          v-for="diary in filteredDiaries.slice(0, 5)"
+          v-for="diary in filteredDiaries.slice(0, 10)"
           :key="diary.id"
         >
           <td>{{diary.id}}</td>
@@ -60,27 +60,73 @@ export default {
       diaries: [
         {
           id: 0,
-          date: "2021-12-11",
+          date: "2018-11-10",
           title: "title1",
-          text: "text1"
+          text:
+            "Morbi commodo vitae erat non dictum. Maecenas varius vehicula lacus, sit amet blandit ex dapibus at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
         },
         {
           id: 1,
-          date: "2020-02-03",
-          title: "title2",
-          text: "text2"
+          date: "2018-11-11",
+          title: "title1",
+          text:
+            "Suspendisse hendrerit enim id metus lobortis imperdiet. Integer sit amet vulputate justo."
         },
         {
           id: 2,
-          date: "2017-05-08",
-          title: "title3",
-          text: "text3"
+          date: "2018-11-12",
+          title: "title1",
+          text:
+            "Sed eget vulputate urna, a consectetur orci. Etiam ultricies lorem est, et gravida nisi vehicula non. Morbi non efficitur odio."
         },
         {
           id: 3,
-          date: "2021-12-12",
-          title: "title4",
-          text: "sss"
+          date: "2018-11-13",
+          title: "title1",
+          text:
+            "Aliquam fermentum imperdiet sagittis. Quisque commodo metus pulvinar orci semper, non tincidunt orci fringilla."
+        },
+        {
+          id: 4,
+          date: "2018-11-14",
+          title: "title1",
+          text:
+            "In ut sapien ipsum. Sed id nulla placerat, euismod dolor et, vestibulum lorem. Nam mattis turpis a lacus iaculis, lacinia consequat dolor iaculis."
+        },
+        {
+          id: 5,
+          date: "2018-11-15",
+          title: "title1",
+          text:
+            "Nam luctus eu dui at posuere. Etiam commodo, nisi in hendrerit auctor, ligula risus vestibulum ligula, eget condimentum sapien tellus in arcu."
+        },
+        {
+          id: 6,
+          date: "2018-11-16",
+          title: "title1",
+          text:
+            "Vivamus ultricies ac elit vitae cursus. Praesent ullamcorper hendrerit pulvinar. Morbi euismod facilisis erat, a sollicitudin lectus euismod vel."
+        },
+        {
+          id: 7,
+          date: "2018-14-17",
+          title: "title1",
+          text:
+            "Quisque non ornare nulla, sed porta metus. Pellentesque gravida magna in risus aliquet placerat. In vulputate molestie ultricies"
+        },
+        {
+          id: 8,
+          date: "2018-16-18",
+          title: "title1",
+          text:
+            "Suspendisse quis suscipit risus. Quisque sed orci in nulla egestas vehicula. Cras feugiat in turpis nec fringilla. Nulla consectetur sit amet lacus ac dignissim."
+        },
+        {
+          id: 9,
+          date: "2018-17-19",
+          title: "title1",
+          text:
+            "Suspendisse eleifend non eros in viverra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor sem ac dui semper porta."
         }
       ],
       date: new Date().toISOString().slice(0, 10),
