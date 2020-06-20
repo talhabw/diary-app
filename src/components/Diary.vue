@@ -109,21 +109,21 @@ export default {
         },
         {
           id: 7,
-          date: "2018-14-17",
+          date: "2018-11-17",
           title: "title1",
           text:
             "Quisque non ornare nulla, sed porta metus. Pellentesque gravida magna in risus aliquet placerat. In vulputate molestie ultricies"
         },
         {
           id: 8,
-          date: "2018-16-18",
+          date: "2018-11-18",
           title: "title1",
           text:
             "Suspendisse quis suscipit risus. Quisque sed orci in nulla egestas vehicula. Cras feugiat in turpis nec fringilla. Nulla consectetur sit amet lacus ac dignissim."
         },
         {
           id: 9,
-          date: "2018-17-19",
+          date: "2018-11-19",
           title: "title1",
           text:
             "Suspendisse eleifend non eros in viverra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor sem ac dui semper porta."
