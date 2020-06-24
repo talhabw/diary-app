@@ -1,5 +1,7 @@
 # gunluk
 
+This is a simple diary app. The main purpose of the project is filter the diaries about date.
+
 ## Project setup
 ```
 npm install
