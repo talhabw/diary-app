@@ -19,11 +19,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr
-          @click="diaryDetails(diary)"
-          v-for="diary in filteredDiaries.slice(0, 10)"
-          :key="diary.id"
-        >
+        <tr @click="diaryDetails(diary)" v-for="diary in filteredDiaries" :key="diary.id">
           <td>{{diary.id}}</td>
           <td>{{diary.date.split("-").reverse().join(" / ")}}</td>
           <td>{{diary.title}}</td>
