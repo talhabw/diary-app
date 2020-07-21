@@ -1,4 +1,6 @@
-# gunluk
+# Diary App
+
+Live Demo: https://vue-diary.netlify.app
 
 This is a simple diary app. The main purpose of the project is filter the diaries about date.
 
